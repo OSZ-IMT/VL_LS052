@@ -39,7 +39,7 @@ class Fahrkartenautomat {
 		}
 		System.out.println("\n\n");
 		
-		// 4
+		// 4_
 		rueckgabebetrag = eingezahlterGesamtbetrag - zuZahlenderBetrag;
 		if (rueckgabebetrag > 0.0) {
 			System.out.println("Der Rückgabebetrag in Höhe von " + rueckgabebetrag + " Euro");
