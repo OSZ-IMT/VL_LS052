@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 class Fahrkartenautomat {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		Scanner tastatur = new Scanner(System.in);
 
@@ -17,7 +17,7 @@ class Fahrkartenautomat {
 
 		// 2
 		eingezahlterGesamtbetrag = 0.0;
-		nochZuZahlen = 0.0;
+
 		while (eingezahlterGesamtbetrag < zuZahlenderBetrag) {
 			nochZuZahlen = zuZahlenderBetrag - eingezahlterGesamtbetrag;
 			System.out.println("Noch zu zahlen: " + nochZuZahlen);
@@ -27,19 +27,16 @@ class Fahrkartenautomat {
 		}
 		
 		// 3
-		System.out.println("\nFahrschein wird ausgegeben");
+		System.out.println();
+		System.out.println("Fahrschein wird ausgegeben");
 		for (int i = 0; i < 8; i++) {
 			System.out.print("=");
-			try {
-				Thread.sleep(200);
-			} 
-			catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			Thread.sleep(200);
 		}
-		System.out.println("\n\n");
+		System.out.println();
+		System.out.println();
 		
-		// 4_
+		// 4
 		rueckgabebetrag = eingezahlterGesamtbetrag - zuZahlenderBetrag;
 		if (rueckgabebetrag > 0.0) {
 			System.out.println("Der Rückgabebetrag in Höhe von " + rueckgabebetrag + " Euro");
@@ -71,8 +68,10 @@ class Fahrkartenautomat {
 			}
 		}
 
-		System.out.println("\nVergessen Sie nicht, den Fahrschein\n" + "vor Fahrtantritt entwerten zu lassen!\n"
-				+ "Wir wünschen Ihnen eine gute Fahrt.");
+		System.out.println();
+		System.out.println("Vergessen Sie nicht, den Fahrschein");
+		System.out.println("vor Fahrtantritt entwerten zu lassen!");
+		System.out.println("Wir wünschen Ihnen eine gute Fahrt.");
 
 		tastatur.close();
 	}
